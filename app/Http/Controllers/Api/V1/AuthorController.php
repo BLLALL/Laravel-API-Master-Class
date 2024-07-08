@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\V1\AuthorFilter;
+use App\Http\Filters\V1\QueryFilter;
 use App\Http\Resources\V1\TicketResource;
 use App\Http\Resources\V1\UserResource;
 use App\Models\Ticket;
@@ -64,4 +65,6 @@ class AuthorController extends ApiController
     {
         //
     }
+
+
 }
