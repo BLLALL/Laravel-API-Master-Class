@@ -7,6 +7,7 @@ use App\Models\User;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,7 +26,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'manager@manager.com',
             'password' => bcrypt('password'),
             'name' => 'The Manager',
-            'is_manager' => true
+            'is_manager' => true,
+            'remember_token' => Str::random(10),
         ]);
     }
 }

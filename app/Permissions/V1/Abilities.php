@@ -18,9 +18,10 @@ final class Abilities
     public const CreateUser = 'user:create';
     public const UpdateUser = 'user:update';
     public const ReplaceUser = 'user:replace';
-    public const DeleteUser = 'user:create';
+    public const DeleteUser = 'user:delete';
 
-    public static function getAbilities(User $user) {
+    public static function getAbilities(User $user): array
+    {
         if($user->is_manager) {
             return [
                 self::CreateTicket,
