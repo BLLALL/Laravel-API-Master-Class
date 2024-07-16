@@ -24,14 +24,13 @@ class ApiController extends Controller
 
         return in_array(strtolower($relationship), $includedValues);
     }
-
     public function isAble($ability, $targetModel)
     {
         try {
-            return Gate::authorize($ability, [$targetModel, $this->policyClass]);
+            Gate::authorize($ability, [$targetModel, $this->policyClass]);
+            return true;
         }catch (AuthorizationException $e) {
-            return $this->error("You're not authorized to change that resource"  . $e->getMessage(), 401);
-
+            return false;
         }
     }
 }
