@@ -6,10 +6,9 @@ use App\Models\User;
 final class Abilities
 {
     public const CreateTicket = 'ticket:create';
-
     public const UpdateTicket = 'ticket:update';
-    public const ReplaceTicket = 'replace:ticket';
-    public const DeleteTicket = 'delete:ticket';
+    public const ReplaceTicket = 'ticket:replace';
+    public const DeleteTicket = 'ticket:delete';
 
     public const CreateOwnTicket = 'ticket:own:create';
 

@@ -29,7 +29,5 @@ class AppServiceProvider extends ServiceProvider
 //            return User::findOrFail($value);
 //        });
 
-        Gate::policy(Ticket::class, TicketPolicy::class);
-
     }
 }

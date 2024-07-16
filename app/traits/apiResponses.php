@@ -25,5 +25,4 @@ trait apiResponses
             'status' => $statusCode
         ], $statusCode);
     }
-
 }

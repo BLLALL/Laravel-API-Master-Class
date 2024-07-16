@@ -14,6 +14,7 @@ class ApiController extends Controller
     use apiResponses;
 
     protected $policyClass;
+
     public function include(string $relationship): bool
     {
         $param = request()->get('include');
@@ -27,11 +28,6 @@ class ApiController extends Controller
 
     public function isAble($ability, $targetModel)
     {
-        try {
-            return Gate::authorize($ability, [$targetModel, $this->policyClass]);
-        }catch (AuthorizationException $e) {
-            return $this->error("You're not authorized to change that resource"  . $e->getMessage(), 401);
-
-        }
+        return Gate::authorize($ability, [$targetModel, $this->policyClass]);
     }
 }

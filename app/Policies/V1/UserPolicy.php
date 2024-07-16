@@ -16,23 +16,19 @@ class UserPolicy
         //
     }
 
-    public function delete(User $user): bool
-    {
+    public function delete(User $user, User $model) {
         return $user->tokenCan(Abilities::DeleteUser);
     }
 
-    public function store(User $user): bool
-    {
-        return $user->tokenCan(Abilities::CreateUser);
-    }
-
-    public function replace(User $user): bool
-    {
+    public function replace(User $user, User $model) {
         return $user->tokenCan(Abilities::ReplaceUser);
     }
 
-    public function update(User $user, Ticket $ticket): bool
-    {
+    public function store(User $user) {
+        return $user->tokenCan(Abilities::CreateUser);
+    }
+
+    public function update(User $user, User $model) {
         return $user->tokenCan(Abilities::UpdateUser);
     }
 }
