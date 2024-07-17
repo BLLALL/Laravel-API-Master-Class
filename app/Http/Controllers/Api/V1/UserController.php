@@ -86,7 +86,7 @@ class UserController extends ApiController
 
             //Policy
             if ($request->user()->is_manager) {
-                $this->isAble('replace', $user);
+
                 $user->update($request->mappedAttributes());
                 return new UserResource($user);
             }
